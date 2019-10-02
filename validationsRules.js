@@ -16,6 +16,9 @@ const validateUkrPassport = value => /^[a-zA-ZА-Яа-я]{2}[0-9]{6}$/i.test(val
 
 const validateUkrBioPassport = value => /^[[0-9]{9}$/i.test(value);
 
+const validateBithSertificate = value =>
+  /^[MDCLXVI]{1}-[a-zA-ZА-Яа-я]{2}[0-9]{6}$/i.test(value);
+
 //ukr
 //1 - паспорт
 //type - xx yyyyyy
@@ -27,29 +30,37 @@ const passportUkrBioTrue = " 1 2 3 7 7 3 2 9 6 ";
 const passportUkrBioFalse = " ф с в 7 6 3 2 9 6 ";
 
 //true for passportUkrTrue
-R.compose(
-  logging,
-  validateUkrPassport,
-  removeSpaces
-)(passportUkrTrue);
+// R.compose(
+//   logging,
+//   validateUkrPassport,
+//   removeSpaces
+// )(passportUkrTrue);
 
 //false for passportUkrFalse
-R.compose(
-  logging,
-  validateUkrPassport,
-  removeSpaces
-)(passportUkrFalse);
+// R.compose(
+//   logging,
+//   validateUkrPassport,
+//   removeSpaces
+// )(passportUkrFalse);
 
 //true for passportUkrBioTrue
-R.compose(
-  logging,
-  validateUkrBioPassport,
-  removeSpaces
-)(passportUkrBioTrue);
+// R.compose(
+//   logging,
+//   validateUkrBioPassport,
+//   removeSpaces
+// )(passportUkrBioTrue);
 
 //false for validateUkrBioPassport
+// R.compose(
+//   logging,
+//   validateUkrBioPassport,
+//   removeSpaces
+// )(passportUkrBioFalse);
+
+//Validation ukr foreign passport (bio and usual) the same as national passport
+
 R.compose(
   logging,
-  validateUkrBioPassport,
+  validateBithSertificate,
   removeSpaces
-)(passportUkrBioFalse);
+)("I-БК 123456"); //true
