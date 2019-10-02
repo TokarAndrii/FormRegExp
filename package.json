@@ -1,31 +1,16 @@
 {
   "name": "documents_regexp_validations",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "react-scripts": "3.1.2"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "validationsRules.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "validate": "nodemon ./validationsRules.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^1.19.3",
+    "ramda": "^0.26.1"
   }
 }
